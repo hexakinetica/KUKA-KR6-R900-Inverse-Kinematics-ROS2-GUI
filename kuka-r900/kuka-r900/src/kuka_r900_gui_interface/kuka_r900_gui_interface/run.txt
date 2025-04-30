@@ -1,0 +1,28 @@
+cd ~/Desktop/kuka-r900/
+rm -rf build/ install/ log/
+colcon build
+source install/setup.bash
+
+cd ~/Desktop/kuka-r900/
+ros2 launch kuka_r900_description full_control.launch.py
+
+cd ~/Desktop/kuka-r900/
+ros2 run kuka_r900_gui_interface ik_gui
+
+
+gnome-terminal -- bash -c "cd ~/Desktop/kuka-r900 && ros2 launch kuka_r900_description full_control.launch.py"
+
+sleep 3
+
+gnome-terminal -- bash -c "cd ~/Desktop/kuka-r900 && ros2 run kuka_r900_gui_interface ik_gui"
+
+
+
+
+
+ros2 launch kuka_r900_description full_control.launch.py
+
+
+
+ros2 run kuka_r900_gui_interface ik_gui
+

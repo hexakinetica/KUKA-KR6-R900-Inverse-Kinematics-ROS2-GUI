@@ -1,0 +1,282 @@
+<?xml version="1.0"?>
+<robot xmlns:xacro="http://ros.org/wiki/xacro" name="kuka_r900">
+
+  <xacro:property name="DEG2RAD" value="0.017453292519943295" />
+
+  <link name="base_link">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/base_link.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/base_link.stl" />
+      </geometry>
+    </collision>
+    </link>
+
+  <link name="link_1">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/link_1.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/link_1.stl" />
+      </geometry>
+    </collision>
+    </link>
+
+  <link name="link_2">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/link_2.dae"/>
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/link_2.stl" />
+      </geometry>
+    </collision>
+     </link>
+
+  <link name="link_3">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/link_3.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/link_3.stl" />
+      </geometry>
+    </collision>
+     </link>
+
+  <link name="link_4">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/link_4.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/link_4.stl" />
+      </geometry>
+    </collision>
+     </link>
+
+  <link name="link_5">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/link_5.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/link_5.stl" />
+      </geometry>
+    </collision>
+     </link>
+
+  <link name="link_6">
+    <visual>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/visual/link_6.dae" />
+      </geometry>
+    </visual>
+    <collision>
+      <origin xyz="0 0 0" rpy="0 0 0"/>
+      <geometry>
+        <mesh filename="package://kuka_r900_description/urdf/meshes_kuka_r900/collision/link_6.stl" />
+      </geometry>
+    </collision>
+     </link>
+
+  <link name="flange" />
+  <link name="base" />
+  <link name="tool0" />
+
+  <joint name="joint_a1" type="revolute">
+    <origin xyz="0 0 0.400" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="link_1"/>
+    <axis xyz="0 0 -1"/>
+    <limit effort="0" lower="${-DEG2RAD*170}" upper="${DEG2RAD*170}" velocity="${DEG2RAD*360}"/>
+    </joint>
+
+  <joint name="joint_a2" type="revolute">
+    <origin xyz="0.025 0 0" rpy="0 0 0"/>
+    <parent link="link_1"/>
+    <child link="link_2"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="${-DEG2RAD*190}" upper="${DEG2RAD*45}" velocity="${DEG2RAD*300}"/>
+     </joint>
+
+  <joint name="joint_a3" type="revolute">
+    <origin xyz="0.455 0 0" rpy="0 0 0"/>
+    <parent link="link_2"/>
+    <child link="link_3"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="${-DEG2RAD*120}" upper="${DEG2RAD*156}" velocity="${DEG2RAD*360}"/>
+     </joint>
+
+  <joint name="joint_a4" type="revolute">
+    <origin xyz="0 0 0.035" rpy="0 0 0"/>
+    <parent link="link_3"/>
+    <child link="link_4"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="0" lower="${-DEG2RAD*185}" upper="${DEG2RAD*185}" velocity="${DEG2RAD*381}"/>
+     </joint>
+
+  <joint name="joint_a5" type="revolute">
+    <origin xyz="0.420 0 0" rpy="0 0 0"/>
+    <parent link="link_4"/>
+    <child link="link_5"/>
+    <axis xyz="0 1 0"/>
+    <limit effort="0" lower="${-DEG2RAD*120}" upper="${DEG2RAD*120}" velocity="${DEG2RAD*388}"/>
+     </joint>
+
+  <joint name="joint_a6" type="revolute">
+    <origin xyz="0.080 0 0" rpy="0 0 0"/>
+    <parent link="link_5"/>
+    <child link="link_6"/>
+    <axis xyz="-1 0 0"/>
+    <limit effort="0" lower="${-DEG2RAD*350}" upper="${DEG2RAD*350}" velocity="${DEG2RAD*615}"/>
+     </joint>
+
+  <joint name="joint_a6-flange" type="fixed">
+    <parent link="link_6"/>
+    <child link="flange"/>
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+  </joint>
+
+  <joint name="base_link-base" type="fixed">
+    <origin xyz="0 0 0" rpy="0 0 0"/>
+    <parent link="base_link"/>
+    <child link="base"/>
+  </joint>
+
+  <joint name="flange-tool0" type="fixed">
+    <parent link="flange"/>
+    <child link="tool0"/>
+    <origin xyz="0 0 0" rpy="0 ${DEG2RAD*90} 0"/>
+  </joint>
+
+<transmission name="joint_a1_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_a1">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+  </joint>
+  <actuator name="joint_a1_motor">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_a2_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_a2">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+  </joint>
+  <actuator name="joint_a2_motor">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_a3_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_a3">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+  </joint>
+  <actuator name="joint_a3_motor">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_a4_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_a4">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+  </joint>
+  <actuator name="joint_a4_motor">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_a5_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_a5">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+  </joint>
+  <actuator name="joint_a5_motor">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<transmission name="joint_a6_trans">
+  <type>transmission_interface/SimpleTransmission</type>
+  <joint name="joint_a6">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+  </joint>
+  <actuator name="joint_a6_motor">
+    <hardwareInterface>hardware_interface/position</hardwareInterface>
+    <mechanicalReduction>1</mechanicalReduction>
+  </actuator>
+</transmission>
+
+<ros2_control name="KukaR900System" type="system">
+  <hardware>
+    <plugin>fake_components/GenericSystem</plugin>
+    <param name="example_param_write_for_sec">0.1</param>
+    <param name="disable_commands_on_start">false</param>
+    <param name="disable_state_updates">false</param>
+    <param name="fake_sensor_commands">true</param>
+  </hardware>
+  <joint name="joint_a1">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="joint_a2">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="joint_a3">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="joint_a4">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="joint_a5">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+  <joint name="joint_a6">
+    <command_interface name="position"/>
+    <state_interface name="position"/>
+  </joint>
+</ros2_control>
+
+
+</robot>
