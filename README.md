@@ -27,7 +27,7 @@ A complete real-time inverse kinematics control system for the **KUKA KR6 R900 s
 1. Ensure ROS2 IRON installed
 2. Open Terminal in kuka-r900 folder
 3. Run:
-        ```bash
+        
         cd ~/Desktop/kuka-r900/     <- replace by your directory
         rm -rf build/ install/ log/
         colcon build
