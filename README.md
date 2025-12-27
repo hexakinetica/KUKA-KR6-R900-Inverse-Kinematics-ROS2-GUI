@@ -1,4 +1,8 @@
 #### 🦾 KUKA KR6 R900 – Inverse Kinematics + Real-Time GUI Control in ROS 2
+#### ⚠️ RESEARCH ARCHIVE
+
+> Project Status: **Archived / Read-Only**. The principles are now implemented in the active **[HexaMotion control core](https://github.com/HexaKinetica/hexa-motion)**.
+> 
 
 A complete real-time inverse kinematics control system for the **KUKA KR6 R900 sixx** industrial robot, built in **ROS 2**, with:
 - Modular IK and FK using **KDL**;
